@@ -620,6 +620,7 @@ class TransformModelTrainer(experiment_base.Experiment):
     def _make_results_im(self, data_gen, max_batch_size=32):
         inputs, targets, ids_source, ids_target = next(data_gen)
         preds = self.transform_model.predict(inputs)
+        print(f"shape------->: {preds[0].shape}")
 
         input_im_batches = inputs[:2]
         labels = [

@@ -181,7 +181,7 @@ if __name__ == '__main__':
                     'transform_reg_flow': 'grad_l2', 'transform_reg_lambda_flow': 1,
                     'recon_loss_Iw': 'cc_vm',
                     'cc_loss_weight': 1, 'cc_win_size_Iw': 9,
-                    'end_epoch': 500,
+                    'end_epoch': 700,
                 },
                 'flow-bidir': {
                     'model_arch': 'flow_bidir_separate',
@@ -196,14 +196,14 @@ if __name__ == '__main__':
                     'model_arch': 'color_unet',
                     'save_every': 5,
                     'test_every': 5,
-                    'flow_fwd_model': 'trained_models/spatial_transform_model.h5',
-                    'flow_bck_model': 'trained_models/spatial_transform_model_bck.h5',
+                    'flow_fwd_model': '/data3/xiang/brainstorm/experiments/TransformModel_mri_source-atlas_0l_100ul_flow_fwd_grad_l2-regfwt1_cc_vm-win9-wt1_7/models/flow_fwd_epoch400_iter400.h5',
+                    'flow_bck_model': '/data3/xiang/brainstorm/experiments/TransformModel_mri_source-atlas_0l_100ul_flow_bck_grad_l2-regfwt1_cc_vm-win9-wt1/models/flow_bck_epoch400_iter400.h5',
                     'transform_reg_color': 'grad-seg-l2', 'transform_reg_lambda_color': 1,
                     'color_transform_in_tgt_space': False,
                     'do_include_aux_input': False,
                     'recon_loss_I': 'l2-tgt', # compute reconstruction loss (L2) in target space
                     'recon_loss_wt': 50,
-                    'end_epoch': 20,
+                    'end_epoch': 51,
                     'use_aux_reg': 'contours',
                 },
             }
@@ -259,16 +259,16 @@ if __name__ == '__main__':
                     'pretrain_l2': 500,
                     'warpoh': False,
                     'tm_flow_model': ( # transform model (spatial) for augmentation
-                        'trained_models/'
-                        'spatial_transform_model.h5'
+                        '/data3/xiang/brainstorm/experiments/TransformModel_mri_source-atlas_0l_100ul_flow_fwd_grad_l2-regfwt1_cc_vm-win9-wt1_7/models/'
+                        'flow_fwd_epoch450_iter450.h5'
                     ),
                     'tm_flow_bck_model': ( # transform model (spatial) for augmentation
-                        'trained_models/'
-                        'spatial_transform_model_bck.h5'
+                        '/data3/xiang/brainstorm/experiments/TransformModel_mri_source-atlas_0l_100ul_flow_bck_grad_l2-regfwt1_cc_vm-win9-wt1/models/'
+                        'flow_bck_epoch450_iter450.h5'
                     ),
                     'tm_color_model': ( # transform model (appearance) for augmentation
-                        'trained_models/'
-                        'appearance_transform_model.h5'
+                        '/data3/xiang/brainstorm/trained_models/'
+                        'appearance_transform_model_epoch01.h5'
                     ),
                 },
             }

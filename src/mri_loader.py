@@ -2,9 +2,10 @@ import glob
 import os
 import sys
 import time
-
+import sys
 import numpy as np
 
+sys.path.insert(1,'/data3/xiang/brainstorm/src/')
 from src import utils
 
 import pynd.segutils as pynd_segutils

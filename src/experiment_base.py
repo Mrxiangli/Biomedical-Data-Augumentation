@@ -156,7 +156,7 @@ class Experiment(object):
             if save_figs:
                 plot_model(
                     m,
-                    to_file=os.path.join(figs_dir, m.name + '.jpg'),
+                    to_file=os.path.join(figs_dir, m.name + '.cmap'),
                     show_shapes=True)
                 with open(os.path.join(figs_dir, m.name + '.txt'), 'w') as fh:
                     m.summary(print_fn=lambda x: fh.write(x + '\n'), line_length=120)

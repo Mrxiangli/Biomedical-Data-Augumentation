@@ -563,7 +563,7 @@ class SegmenterTrainer(experiment_base.Experiment):
 
                 # warp color target back to the atlas space so that we can compute the color transformation
                 X_colortgt_src, _ = self.flow_bck_aug_model.predict([X_colortgt, X_source])
-                colored_vol, color_delta, _ = self.color_aug_model.predict([X_source, X_colortgt_src, source_contours, flow])
+                colored_vol, color_delta = self.color_aug_model.predict([X_source, X_colortgt_src, source_contours, flow])
 
                 self.aug_colored = colored_vol
 
